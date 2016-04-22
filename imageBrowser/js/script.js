@@ -1,3 +1,3 @@
-$('#carousel').on('slid', function (e) {
-  console.log(e)
+$('.carousel').on('slid.bs.carousel', function () {
+  console.log("Switch image")
 })
