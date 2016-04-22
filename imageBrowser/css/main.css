@@ -2,3 +2,8 @@
     width: 6.25em;
     height: 6.25em;
 }
+
+.thumbnails li {
+  display: inline-block;
+  list-style-type: none;
+}
