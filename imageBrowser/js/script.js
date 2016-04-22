@@ -1,3 +1,3 @@
-$('#imageModal').bind('slide', function (e) {
-  console.log("Switch image")
+$('#imageModal').on('slide.bs.carousel', function (e) {
+  console.log(e)
 })
