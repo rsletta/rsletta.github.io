@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Modal ImageBrowser</title>
+  </head>
+  <body>
+<div class="content">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="row">
+        <h2>Bootstrap Modal ImageBrowser</h2>
+        <button type="button" name="modal_button" class="btn btn-default" data-toggle="modal" data-target="#imageModal"></button>
+
+        <!-- Modal test-->
+        <div id="imageModal" class="modal fade and carousel slide in" aria-labelledby="modalLabel" style="padding-right: 0px">
+          <div id="modalDialog" class="modal-dialog" role="document">
+            <div id="modalContent" class="modal-content">
+              <div id="modalHeader" class="modal-header">
+                ::before
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+                ::after
+              </div>
+              <div id="modalBody" class="modal-body">
+                <div id="row" class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                    <ol class="carousel-indicators">
+                      <li data-target="#imageModal" data-slide-to="0" class="active"></li>
+                      <li data-target="#imageModal" data-slide-to="1"></li>
+                      <li data-target="#imageModal" data-slide-to="2"></li>
+                    </ol>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>
