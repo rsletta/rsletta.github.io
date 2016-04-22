@@ -1,3 +1,3 @@
-$('#imageModal').on('slide.bs.carousel', function (e) {
+$('#carousel').on('slide.bs.carousel', function (e) {
   console.log(e)
 })
