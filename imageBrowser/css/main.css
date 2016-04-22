@@ -1,5 +1,8 @@
 .thumbnails {
     margin: auto;
+    text-align: center;
+    list-style-position:inside;
+    display: inline-block;
 }
 
 .thumbnails img {
@@ -8,6 +11,5 @@
 }
 
 .thumbnails li {
-  display: inline-block;
   list-style-type: none;
 }
