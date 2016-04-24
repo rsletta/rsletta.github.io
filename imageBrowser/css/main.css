@@ -1,14 +1,63 @@
 .thumbnails {
-    margin: auto;
+    margin:auto;
     text-align: center;
 }
 
 .thumbnails img {
-    width: 6.25em;
-    height: 6.25em;
+    margin: 5px;
+    width: 6.56em;
+    height: 6.56em;
 }
 
 .thumbnails li {
   list-style-type: none;
   display: inline-block;
+}
+
+.thumbnails .active {
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+}
+
+.thumbnails .active-thumb {
+  border-style: solid;
+  border-color: #ccc;
+  border-width: thin;
+}
+
+.thumbs {
+    margin:auto;
+    text-align: center;
+}
+
+.thumbs img {
+    margin: 5px;
+    max-width: 6.56em;
+    max-height: 6.56em;
+    width: 100%;
+    height: auto;
+}
+
+.thumbs li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.thumbs .active {
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+}
+
+.thumbs .active-thumb {
+  border-style: solid;
+  border-color: #ccc;
+  border-width: thin;
+}
+
+#active-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

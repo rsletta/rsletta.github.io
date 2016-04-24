@@ -17,7 +17,67 @@
       <div class="row">
         <h2>Bootstrap Modal ImageBrowser</h2>
         <button type="button" name="modal_button" class="btn btn-default" data-toggle="modal" data-target="#imageModal">Image Browser</button>
+        <button type="button" name="modal_button" class="btn btn-default" data-toggle="modal" data-target="#imageBrowser">Image Browser - Hack</button>
 
+        <!-- Imagebrowser hack-->
+        <div id="imageBrowser" class="modal fade">
+          <div id="modalDialog" class="modal-dialog" role="document">
+            <div id="modalContent" class="modal-content">
+              <div id="modalHeader" class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+                <h4 class="modal-title" id="modalLabel" style="text-align: center;"></h4>
+              </div>
+              <div id="modalBody" class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img id="active-image" src="img/img1.png" alt="Terminal Picture" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                      <span id="imagetext">Image text</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <ol class="thumbs">
+                      <li>
+                        <div id="thumb1" class="active-thumb">
+                          <img src="img/img1.png" alt="Terminal Picture" />
+                        </div>
+                      </li>
+                      <li>
+                        <div id="thumb2">
+                          <img src="img/img2.png" alt="Terminal Picture" />
+                        </div>
+                      </li>
+
+                      <li>
+                        <div id="thumb3">
+                          <img src="img/img3.png" alt="Terminal Picture" />
+                        </div>
+                      </li>
+                      <li>
+                        <div id="thumb4">
+                          <img src="img/img4.png" alt="Terminal Picture" />
+                        </div>
+                      </li>
+                      <li>
+                        <div id="thumb5">
+                          <img src="img/img5.png" alt="Terminal Picture" />
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End imagebrowser hack-->
         <!-- Modal test-->
         <div id="imageModal" class="modal fade and carousel slide" aria-labelledby="modalLabel" style="padding-right: 0px">
           <div id="modalDialog" class="modal-dialog" role="document">
@@ -26,34 +86,34 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">x</span>
                 </button>
-                <h4 class="modal-title" id="modalLabel" style="text-align: center"></h4>
+                <h4 class="modal-title" id="modalLabel" style="text-align: center; "></h4>
               </div>
               <div id="modalBody" class="modal-body">
                 <div id="row" class="row">
                   <div class="col-md-12 center">
                     <div id="carousel" class="carousel slide" data-ride="carousel">
-                    <!--<ol class="carousel-indicators">
+                    <ol class="carousel-indicators">
                       <li data-target="#imageModal" data-slide-to="0" class="active"></li>
                       <li data-target="#imageModal" data-slide-to="1"></li>
                       <li data-target="#imageModal" data-slide-to="2"></li>
                       <li data-target="#imageModal" data-slide-to="3"></li>
                       <li data-target="#imageModal" data-slide-to="4"></li>
-                    </ol>-->
+                    </ol>
                   <div class="carousel-inner">
                         <div class="item active">
-                          <img src="img/img1.png" alt="Terminal Picture" id="image1"/>
+                          <img src="img/img1.png" alt="Terminal Picture" id="image1" thumb="thumb1"/>
                         </div>
                         <div class="item">
-                          <img src="img/img2.png" alt="Terminal Picture" id="image2"/>
+                          <img src="img/img2.png" alt="Terminal Picture" id="image2" thumb="thumb2"/>
                         </div>
                         <div class="item">
-                          <img src="img/img3.png" alt="Terminal Picture" id="image3"/>
+                          <img src="img/img3.png" alt="Terminal Picture" id="image3" thumb="thumb3"/>
                         </div>
                         <div class="item">
-                          <img src="img/img4.png" alt="Terminal Picture" id="image4"/>
+                          <img src="img/img4.png" alt="Terminal Picture" id="image4" thumb="thumb4"/>
                         </div>
                         <div class="item">
-                          <img src="img/img5.png" alt="Terminal Picture" id="image5"/>
+                          <img src="img/img5.png" alt="Terminal Picture" id="image5" thumb="thumb5"/>
                         </div>
                     </div>
                     <!-- Controls -->
@@ -70,18 +130,39 @@
                   <!-- End of image carousel-->
                   <div class="row">
                     <div class="col-md-12">
-                      <span class="thumbnails">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                      <span style="text-align:center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                       <hr/>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <ol class="thumbnails">
-                        <li data-target="#carousel" data-slide-to="0"><img src="img/img1.png" alt="Terminal Picture" id="thumb1"/></li>
-                        <li data-target="#carousel" data-slide-to="1"><img src="img/img2.png" alt="Terminal Picture" id="thumb2"/></li>
-                        <li data-target="#carousel" data-slide-to="2"><img src="img/img3.png" alt="Terminal Picture" id="thumb3"/></li>
-                        <li data-target="#carousel" data-slide-to="3"><img src="img/img4.png" alt="Terminal Picture" id="thumb4"/></li>
-                        <li data-target="#carousel" data-slide-to="4"><img src="img/img5.png" alt="Terminal Picture" id="thumb4"/></li>
+                        <li data-target="#carousel" data-slide-to="0">
+                          <div id="thumb1" class="active-thumb">
+                            <img src="img/img1.png" alt="Terminal Picture" />
+                          </div>
+                        </li>
+                        <li data-target="#carousel" data-slide-to="1">
+                          <div id="thumb2">
+                            <img src="img/img2.png" alt="Terminal Picture" />
+                          </div>
+                        </li>
+
+                        <li data-target="#carousel" data-slide-to="2">
+                          <div id="thumb3">
+                            <img src="img/img3.png" alt="Terminal Picture" />
+                          </div>
+                        </li>
+                        <li data-target="#carousel" data-slide-to="3">
+                          <div id="thumb4">
+                            <img src="img/img4.png" alt="Terminal Picture" />
+                          </div>
+                        </li>
+                        <li data-target="#carousel" data-slide-to="4">
+                          <div id="thumb5">
+                            <img src="img/img5.png" alt="Terminal Picture" />
+                          </div>
+                        </li>
                       </ol>
                     </div>
                   </div>
