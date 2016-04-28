@@ -55,7 +55,7 @@ $(document).ready(function(){
   setImage(0);
 
   // Change image on dot click
-  $('.nav-dot').click(function(e) {
+  $('.ib-nav-dot').click(function(e) {
     var index = e.currentTarget.attributes.id.value;
     setImage(index);
   });
