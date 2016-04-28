@@ -23,36 +23,36 @@
       height: 6.56em;
   }
 
-.nav i {
+.ib-nav span {
   font-size: 3em;
   color: rgba(134, 134, 134, 0.3);
 }
-.nav i:hover {
+.ib-nav span:hover {
   color: rgba(134, 134, 134, 0.5);
   cursor: pointer;
 }
 
-.nav .nav-left {
+.ib-nav .ib-nav-left {
   position: absolute;
   bottom: 290px;
   left: 0;
 }
 
-.nav .nav-right {
+.ib-nav .ib-nav-right {
   position: absolute;
   bottom: 290px;
   right: 0;
 }
 
-  .nav-dots {
+  .ib-nav-dots {
   	width: 100%;
   	height: 11px;
     color: #EBE9E5;
-  	display: none;
+  	display: inline-block;
   	text-align: center;
   }
 
-  .nav-dot {
+  .ib-nav-dot {
   	width: 11px;
   	height: 11px;
   	margin: 0 4px;
@@ -61,11 +61,11 @@
   	background-color: #EBE9E5;
   }
 
-  .nav-dot:hover {
+  .ib-nav-dot:hover {
   	cursor: pointer;
   }
 
-.nav-dot.active-dot {
+.ib-nav-dot.active-dot {
   background-color: #4A4A49;
 }
 
@@ -76,14 +76,4 @@
 
   #active-image {
     max-width: 100%;
-  }
-
-@media screen and (max-width: 768px) {
-    .ib-thumbs {
-      display: none;
-    }
-    .nav-dots {
-      display: block;
-    }
-
   }

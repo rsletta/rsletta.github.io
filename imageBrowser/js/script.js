@@ -29,7 +29,7 @@ function styleThumb(index) {
   // Set this at active thumbnail
   $('.ib-thumbs').children().eq(index).children().addClass('active-ib-thumb');
   // Sett active dot
-  $('.nav-dots').children().eq(index).addClass('active-dot')
+  $('.ib-nav-dots').children().eq(index).addClass('active-dot')
 };
 
 function setImage(index) {
@@ -48,8 +48,8 @@ $(document).ready(function(){
     // Add navdot to nav-dots
     var dot = document.createElement('li');
     dot.setAttribute('id',index);
-    dot.setAttribute("class", "nav-dot");
-    $('.nav-dots').append(dot);
+    dot.setAttribute("class", "ib-nav-dot");
+    $('.ib-nav-dots').append(dot);
   });
   // Set first thumbnail in active-image
   setImage(0);
