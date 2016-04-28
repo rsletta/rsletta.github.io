@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-  <script src="js/jquery-2.2.3.min.js"></script>
+  <!--<script src="js/jquery-2.2.3.min.js"></script>-->
+  <script   src="https://code.jquery.com/jquery-1.12.0.js"   integrity="sha256-yFU3rK1y8NfUCd/B4tLapZAy9x0pZCqLZLmFL3AWb7s="   crossorigin="anonymous"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/script.js"></script>
 <div class="container">
@@ -16,9 +17,7 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="row">
         <h2>Bootstrap Modal ImageBrowser</h2>
-        <button type="button" name="modal_button" class="btn btn-default" data-toggle="modal" data-target="#imageModal">Image Browser</button>
         <button type="button" name="modal_button" class="btn btn-default" data-toggle="modal" data-target="#imageBrowser">Image Browser - Hack</button>
-
         <!-- Imagebrowser hack-->
         <div id="imageBrowser" class="modal fade">
           <div id="modalDialog" class="modal-dialog" role="document">
@@ -30,21 +29,29 @@
                 <h4 class="modal-title" id="modalLabel" style="text-align: center;"></h4>
               </div>
               <div id="modalBody" class="modal-body">
+
                 <div class="row">
-                  <div class="col-md-12">
-                    <img id="active-image" src="img/img1.png" alt="Terminal Picture" />
+                  <div class="col-xs-12">
+                    <img id="active-image" alt="Terminal Picture" />
+                    <div class="col-xs-12 nav">
+                      <i class="fa fa-chevron-left nav-left" aria-hidden="true" onClick="prevImg(); return false;"></i>
+                      <i class="fa fa-chevron-right nav-right" aria-hidden="true" onClick="nextImg(); return false;"></i>
+                      <ul class="nav-dots">
+
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div id="imagetext" class="col-md-12">
+                  <div id="imageCaption" class="col-xs-12">
                       <h5>Image text</h5>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-12">
-                    <ol class="thumbs">
+                  <div class="col-xs-12">
+                    <ol class="ib-thumbs">
                       <li>
-                        <div id="thumb1" class="active-thumb">
+                        <div id="thumb1" class="active-ib-thumb">
                           <img src="img/img1.png" alt="Terminal Picture" />
                         </div>
                       </li>
@@ -78,99 +85,6 @@
         </div>
 
         <!-- End imagebrowser hack-->
-        <!-- Modal test-->
-        <div id="imageModal" class="modal fade and carousel slide" aria-labelledby="modalLabel" style="padding-right: 0px">
-          <div id="modalDialog" class="modal-dialog" role="document">
-            <div id="modalContent" class="modal-content">
-              <div id="modalHeader" class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">x</span>
-                </button>
-                <h4 class="modal-title" id="modalLabel" style="text-align: center; "></h4>
-              </div>
-              <div id="modalBody" class="modal-body">
-                <div id="row" class="row">
-                  <div class="col-md-12 center">
-                    <div id="carousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators" hidden="hidden">
-                      <li data-target="#imageModal" data-slide-to="0" class="active"></li>
-                      <li data-target="#imageModal" data-slide-to="1"></li>
-                      <li data-target="#imageModal" data-slide-to="2"></li>
-                      <li data-target="#imageModal" data-slide-to="3"></li>
-                      <li data-target="#imageModal" data-slide-to="4"></li>
-                    </ol>
-                  <div class="carousel-inner">
-                        <div class="item active">
-                          <img src="img/img1.png" alt="Terminal Picture" id="image1" thumb="thumb1"/>
-                        </div>
-                        <div class="item">
-                          <img src="img/img2.png" alt="Terminal Picture" id="image2" thumb="thumb2"/>
-                        </div>
-                        <div class="item">
-                          <img src="img/img3.png" alt="Terminal Picture" id="image3" thumb="thumb3"/>
-                        </div>
-                        <div class="item">
-                          <img src="img/img4.png" alt="Terminal Picture" id="image4" thumb="thumb4"/>
-                        </div>
-                        <div class="item">
-                          <img src="img/img5.png" alt="Terminal Picture" id="image5" thumb="thumb5"/>
-                        </div>
-                    </div>
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-                      <span class="fa fa-caret-left" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-                      <span class="fa fa-caret-right" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>
-                </div>
-                  <!-- End of image carousel-->
-                  <div class="row">
-                    <div id="imagetext" class="col-md-12">
-                      <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-                      <hr/>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <ol class="thumbnails">
-                        <li data-target="#carousel" data-slide-to="0">
-                          <div id="thumb1" class="active-thumb">
-                            <img src="img/img1.png" alt="Terminal Picture" />
-                          </div>
-                        </li>
-                        <li data-target="#carousel" data-slide-to="1">
-                          <div id="thumb2">
-                            <img src="img/img2.png" alt="Terminal Picture" />
-                          </div>
-                        </li>
-
-                        <li data-target="#carousel" data-slide-to="2">
-                          <div id="thumb3">
-                            <img src="img/img3.png" alt="Terminal Picture" />
-                          </div>
-                        </li>
-                        <li data-target="#carousel" data-slide-to="3">
-                          <div id="thumb4">
-                            <img src="img/img4.png" alt="Terminal Picture" />
-                          </div>
-                        </li>
-                        <li data-target="#carousel" data-slide-to="4">
-                          <div id="thumb5">
-                            <img src="img/img5.png" alt="Terminal Picture" />
-                          </div>
-                        </li>
-                      </ol>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

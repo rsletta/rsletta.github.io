@@ -1,30 +1,69 @@
-<<<<<<< HEAD
-var slid_event = $.Event('slid.bs.carousel', { relatedTarget: relatedTarget, direction: direction }) // yes, "slid"
-console.log(slid_event)
+// Variables
+var imgObj = { images: []};
+var images = imgObj.images;
+var currentImg = undefined;
 
-$('#carousel').on('slid.bs.carousel', function () {
-  console.log("Switch image")
-})
-=======
+// Functions
+function prevImg() {
+  var newId = currentImg.id - 1
+  if (newId < 0 ) {
+    newId = (images.length - 1);
+  }
+  setImage(newId);
+};
+
+function nextImg() {
+  var newId = currentImg.id + 1;
+  if (newId > (images.length - 1) ) {
+    newId = 0;
+  }
+  setImage(newId);
+};
+
+function styleThumb(index) {
+  console.log(index);
+  // Remove active thumbnail
+  $('.ib-thumbs').children().find('.active-ib-thumb').removeClass('active-ib-thumb');
+  // Remove active dot
+  $('.active-dot').removeClass('active-dot');
+  // Set this at active thumbnail
+  $('.ib-thumbs').children().eq(index).children().addClass('active-ib-thumb');
+  // Sett active dot
+  $('.nav-dots').children().eq(index).addClass('active-dot')
+};
+
+function setImage(index) {
+  currentImg = images[index]
+  $( '#active-image' ).attr('src', currentImg.src);
+  styleThumb(index);
+}
+
+
 $(document).ready(function(){
-  $('#carousel').on('slid.bs.carousel', function (e) {
-    var activeImage = $('.carousel-inner').find(".item.active").children();
-    var activeImageId = "#" + activeImage[0].attributes.thumb.value
-    // Remove active thumbnail
-    $('.thumbnails').children().find('.active-thumb').removeClass('active-thumb');
-    // Set new active thumbnail
-    $('.thumbnails').children().find(activeImageId).addClass('active-thumb');
-  })
+  // Load Imagedata into object
+  $('.ib-thumbs').find('li').each(function(index) {
+    var img = $(this).children().find('img');
+    // Add image to imgObj
+    imgObj.images.push( {id: index, src: img[0].attributes.src.value});
+    // Add navdot to nav-dots
+    var dot = document.createElement('li');
+    dot.setAttribute('id',index);
+    dot.setAttribute("class", "nav-dot");
+    $('.nav-dots').append(dot);
+  });
+  // Set first thumbnail in active-image
+  setImage(0);
 
-  $('.thumbs').find('div').click(function(e) {
-    var clickedThumb = $(this).children();
-    // Remove active thumbnail
-    $('.thumbs').children().find('.active-thumb').removeClass('active-thumb');
-    // Set this at active thumbnail
-    $(this).addClass('active-thumb');
+  // Change image on dot click
+  $('.nav-dot').click(function(e) {
+    var index = e.currentTarget.attributes.id.value;
+    setImage(index);
+  });
+
+  // Change image on thumbnail click
+  $('.ib-thumbs').find('div').click(function(e) {
+    var clickedId = $(this).parent().index();
     // Change image
-    var imgUrl = clickedThumb[0].attributes.src.value;
-    $( '#active-image' ).attr('src', imgUrl)
+    setImage(clickedId);
   });
 });
->>>>>>> a2535ba8fc00b0e2ab4c639b5b0a2770cfe4d2e9
