@@ -76,4 +76,9 @@
             // Change image
             setImage(clickedId);
         });
+
+        // Swipe to change image
+        $('#active-image').on('touchmove' , function(e) {
+            console.log(e);
+        });
     });
